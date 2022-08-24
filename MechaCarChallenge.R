@@ -11,6 +11,7 @@ library(tidyverse)
 
 # Input
 MechaCar_mpg_df <- read.csv(file='./Resources/MechaCar_mpg.csv', check.names = F, stringsAsFactors = F)
+Suspension_Coil_df <- read.csv(file='./Resources/Suspension_Coil.csv', check.names = F, stringsAsFactors = F)
 
 #******************************************************************************
 # Deliverable 1: Linear Regression to Predict MPG
@@ -26,3 +27,16 @@ MPG_MLR <- lm(mpg~vehicle_length+vehicle_weight+spoiler_angle+ground_clearance+A
 
 # 2. Find the p-value and r-squared
 summary(MPG_MLR)
+
+#******************************************************************************
+# Deliverable 2: Summary Statistics on Suspension Coils
+# ---------------------------------------------------------------------------------
+# - Columns in Suspension_Coil_df [colnames(Suspension_Coil_df)]
+#   [1] "VehicleID"   "Manufacturing_Lot"   "PSI"
+# - Need to use group_by() and summarize()
+# ---------------------------------------------------------------------------------
+# 1. Create the Total Summary
+total_summary <- Suspension_Coil_df %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
+
+# 2. Summarize by lot
+lot_summary <- Suspension_Coil_df %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))

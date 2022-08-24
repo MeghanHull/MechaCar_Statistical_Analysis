@@ -1,7 +1,7 @@
 # MechaCar Statistical Analysis
 <!-- Automotive statistical testing using the R programming language (Rice Bootcamp) -->
 ## Project Overview
-AutosRUs’ newest prototype, the MechaCar, is suffering from production troubles that are blocking the manufacturing team’s progress.  Production data is to be reviewed for insights that may help the manufacturing team, specifically:
+The newest prototype from AutosRUs, the MechaCar, is suffering from production troubles that are blocking the manufacturing team’s progress.  Production data is to be reviewed for insights that may help the manufacturing team, specifically:
 - Perform multiple linear regression analysis to identify which variables in the dataset predict the mpg of MechaCar prototypes
 - Collect summary statistics on the pounds per square inch (PSI) of the suspension coils from the manufacturing lots
 - Run t-tests to determine if the manufacturing lots are statistically different from the mean population
@@ -11,9 +11,10 @@ AutosRUs’ newest prototype, the MechaCar, is suffering from production trouble
 The purpose of this project is to provide a statisitical analysis of automobile performance with R.
 
 ## Resources
-### Data Sources
+### Data Sources & Analysis Scripts
 1. [MechaCar_mpg.csv](Resources/MechaCar_mpg.csv)
 2. [Suspension_Coil.csv](Resources/Suspension_Coil.csv)
+3. [MechaCarChallenge.R](MechaCarChallenge.R)
 
 ### Software
 ***Table 1: Software & Library Versions***
@@ -21,12 +22,10 @@ The purpose of this project is to provide a statisitical analysis of automobile 
 | :--- | :---: |
 | R | 4.2.1 (Funny-Looking Kid) |
 | RStudio | 2022.07.1+554 (Spotted Wakerobin) |
-| Visual Studio Code | 1.69.2 |
-
-<!-- RStudio 2022.07.1+554 "Spotted Wakerobin" Release (7872775ebddc40635780ca1ed238934c3345c5de, 2022-07-22) for Windows Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.12.8 Chrome/69.0.3497.128 Safari/537.36 -->
+| Visual Studio Code | 1.70.2 |
 
 # Results
-## Deliverable 1: Linear Regression to Predict MPG
+## Linear Regression to Predict MPG
 <!-- You will earn a perfect score for Deliverable 1 by completing all requirements below:
 - The MechaCar_mpg.csv file is imported and read into a dataframe (5 pt)
 - An RScript is written for a linear regression model to be performed on all six variables (10 pt)
@@ -46,22 +45,29 @@ As shown in **Figure 1**, the `Pr(>|t|)` values indicate that *vehicle_length* a
 
 The regression is has a non-zero slope, as the calculated `p-value` is 5.35e-11, well below the 0.05% threshhold for signifigance.   The `r-squared value` of 0.7149 indicates a generally strong correlation, so this linear model should be effective in estimating mpg of MechaCar prototypes.
 
-## Deliverable 2: Summary Statistics on Suspension Coils
+## Summary Statistics on Suspension Coils
 <!-- You will earn a perfect score for Deliverable 2 by completing all requirements below:
 - The Suspension_Coil.csv file is imported and read into a dataframe (5 pt)
 - An RScript is written to create a total summary dataframe that has the mean, median, variance, and standard deviation of the PSI for all manufacturing lots (10 pt)
 - An RScript is written to create a lot summary dataframe that has the mean, median, variance, and standard deviation for each manufacturing lot (10 pt)
 - There is a summary that addresses the design specification requirement for all the manufacturing lots and each lot individually (5 pt) -->
-Write a short summary using screenshots from your total_summary and lot_summary dataframes, and address the following question:
-- The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
+The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch.  Summary statistics have been compiled for all suspension coils and for each manufacturing lot:
 
-## Deliverable 3: T-Test on Suspension Coils
+***Figure 2: Summary Statistics for All Suspension Coils***
+![D2_total_summary.png](Resources/images/D2_total_summary.png)
+
+***Figure 3: Summary Statistics for Suspension Coils by Manufacuring Lot***
+![D2_lot_summary.png](Resources/images/D2_lot_summary.png)
+
+While **Figure 2** shows that overall manufacture meets the specification, examination of **Figure 3** reveals excessive variance in the coils from Manufacturing Lot 3.  The 70% increased spread at Lot 3 should be analyzed further to determine the root cause. If the performance lag is not due to an already identified and documented cause, a full qudit / gap assessment may be required of Lot 3's records and procedures (e.g. NCRs, equipment maintenance logs, incoming material receipts).
+
+## T-Test on Suspension Coils
 <!-- You will earn a perfect score for Deliverable 3 by completing all requirements below:
 - An RScript is written for t-test that compares all manufacturing lots against mean PSI of the population (5 pt)
 - An RScript is written for three t-tests that compare each manufacturing lot against mean PSI of the population (10 pt)
 - There is a summary of the t-test results across all manufacturing lots and for each lot (5 pt) -->
 
-## Deliverable 4: Design a Study Comparing the MechaCar to the Competition
+## Study Design: MechaCar vs Competition
 <!-- The statistical study design has the following:
 - A metric to be tested is mentioned (5 pt)
 - A null hypothesis or an alternative hypothesis is described (5 pt)
