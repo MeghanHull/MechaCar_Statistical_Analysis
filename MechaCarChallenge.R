@@ -3,7 +3,7 @@
 #******************************************************************************
 # Purpose  := Statisitical analysis of automobile performance with R
 # Created  := 2022 Aug 24 18:09:34 UTC (Meghan E. Hull)
-# Modified := 2022 Aug 24 18:14:05 UTC (Meghan E. Hull)
+# Modified := 2022 Aug 24 23:08:10 UTC (Meghan E. Hull)
 # ---------------------------------------------------------------------------------
 # Libraries
 library(dplyr)
@@ -40,3 +40,29 @@ total_summary <- Suspension_Coil_df %>% summarize(Mean = mean(PSI), Median = med
 
 # 2. Summarize by lot
 lot_summary <- Suspension_Coil_df %>% group_by(Manufacturing_Lot) %>% summarize(Mean = mean(PSI), Median = median(PSI), Variance = var(PSI), SD = sd(PSI))
+
+#******************************************************************************
+# Deliverable 3: T-Tests on Suspension Coils
+# ---------------------------------------------------------------------------------
+# T-Test assumptions:
+# 1. Input data is numerical and continuous.
+# 2. Sample data was selected randomly from its population data.
+# 3. Input data is considered to be normally distributed.
+# 4. Sample size is reasonably large. 
+# 5. Variance of the input data should be very similar.
+# ---------------------------------------------------------------------------------
+# The t.test()function uses:
+# - x           : numeric vector of sample data
+# - mu          : calculated mean of the population data
+# - alternative : specifies whether one-sided (one-tailed) or two-sided (two-tailed)
+# - subset      : optional vector specifying a subset of observations to be used
+# ---------------------------------------------------------------------------------
+# Suspension_Coil_df only has 150 entries, so using entirety instead of sampling
+# ---------------------------------------------------------------------------------
+# 1. T-Test of entire population
+t.test(Suspension_Coil_df$PSI, mu=1500)
+
+# 2. T-Test of each lot
+t.test(subset(Suspension_Coil_df,Manufacturing_Lot=="Lot1")$PSI, mu = 1500)
+t.test(subset(Suspension_Coil_df,Manufacturing_Lot=="Lot2")$PSI, mu = 1500)
+t.test(subset(Suspension_Coil_df,Manufacturing_Lot=="Lot3")$PSI, mu = 1500)

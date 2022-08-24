@@ -66,6 +66,21 @@ While **Figure 2** shows that overall manufacture meets the specification, exami
 - An RScript is written for t-test that compares all manufacturing lots against mean PSI of the population (5 pt)
 - An RScript is written for three t-tests that compare each manufacturing lot against mean PSI of the population (10 pt)
 - There is a summary of the t-test results across all manufacturing lots and for each lot (5 pt) -->
+One-sample T-tests were used to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch.  A standard signifigance threshhold of 5% is assumed.  The results are:
+
+***Figure 4: One-Sample T-Test for All Suspension Coils***
+![D3_TTest_total.png](Resources/images/D3_TTest_total.png)
+
+***Figure 5: One-Sample T-Test for Manufacuring Lot 1***
+![D3_TTest_lot1.png](Resources/images/D3_TTest_lot1.png)
+
+***Figure 6: One-Sample T-Test for Manufacuring Lot 2***
+![D3_TTest_lot2.png](Resources/images/D3_TTest_lot2.png)
+
+***Figure 7: One-Sample T-Test for Manufacuring Lot 3***
+![D3_TTest_lot3.png](Resources/images/D3_TTest_lot3.png)
+
+As shown in **Figures 4 to 6**, the associated `p-values` are well above 5%, indicating that the overall manufacture, and both Lot 1 and Lot 2 suspension coils are not statistically different from the prescribed population mean of 1,500 pounds per square inch.  On the other hand, the Lot 3 `p-value` of 4.168% in **Figure 7** is statistically different, and further supports the reccommendation in the previous section to investigate the root cause.  
 
 ## Study Design: MechaCar vs Competition
 <!-- The statistical study design has the following:
