@@ -33,10 +33,12 @@ The purpose of this project is to provide a statisitical analysis of automobile 
 - An RScript is written to create the statistical summary of the linear regression model with the intended p-values (10 pt)
 - There is a summary that addresses all three questions (5 pt) -->
 A multiple linear regression performed on the [MPG data](Resources/MechaCar_mpg.csv) yielded:
+
 ***Equation 1: MPG Multiple Linear Regression***
 $$\text{mpg} = 6.267*\text{vehicle\\_length} + 0.001245*\text{vehicle\\_weight} + 0.06877*\text{spoiler\\_angle} + 3.546*\text{ground\\_clearance} - 3.411*\text{AWD} - 104 $$
 
 The summary statistical metrics for **Equation 1** are:
+
 ***Figure 1: MPG Multiple Linear Regression Statistical Metrics***
 ![D1_MLR_PR.png](Resources/images/D1_MLR_PR.png)
 
