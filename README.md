@@ -32,10 +32,17 @@ The purpose of this project is to provide a statisitical analysis of automobile 
 - An RScript is written for a linear regression model to be performed on all six variables (10 pt)
 - An RScript is written to create the statistical summary of the linear regression model with the intended p-values (10 pt)
 - There is a summary that addresses all three questions (5 pt) -->
-**Insert summary**
-- Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
-- Is the slope of the linear model considered to be zero? Why or why not?
-- Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+A multiple linear regression performed on the [MPG data](Resources/MechaCar_mpg.csv) yielded:
+***Equation 1: MPG Multiple Linear Regression***
+$$\text{mpg} = 6.267*\text{vehicle\\_length} + 0.001245*\text{vehicle\\_weight} + 0.06877*\text{spoiler\\_angle} + 3.546*\text{ground\\_clearance} - 3.411*\text{AWD} - 104 $$
+
+The summary statistical metrics for **Equation 1** are:
+***Figure 1: MPG Multiple Linear Regression Statistical Metrics***
+![D1_MLR_PR.png](Resources/images/D1_MLR_PR.png)
+
+As shown in **Figure 1**, the `Pr(>|t|)` values indicate that *vehicle_length* and *ground_clearance* are the known variables most likely to have a statistically significant impact on *mpg*.  The *intercept* for **Equation 1** is also statistically significant, which may indicate that there are additional unidentified factors to be considered.
+
+The regression is has a non-zero slope, as the calculated `p-value` is 5.35e-11, well below the 0.05% threshhold for signifigance.   The `r-squared value` of 0.7149 indicates a generally strong correlation, so this linear model should be effective in estimating mpg of MechaCar prototypes.
 
 ## Deliverable 2: Summary Statistics on Suspension Coils
 <!-- You will earn a perfect score for Deliverable 2 by completing all requirements below:
