@@ -88,3 +88,33 @@ As shown in **Figures 4 to 6**, the associated `p-values` are well above 5%, ind
 - A null hypothesis or an alternative hypothesis is described (5 pt)
 - A statistical test is described to test the hypothesis (5 pt)
 - The data for the statistical test is described (5 pt) -->
+After reviewing recent automotive studies [^1][^2][^3] for key factors consumers value in new cars, the following metrics are recommended for the statistical analysis of AutoRUs' primary competitors:
+- Base Manufacturer Suggested Retail Price (MSRP)
+- National Highway Traffic Safety Administration (NHTSA) safety rating 
+- Fuel economy (mpg)
+- Advanced safety features (e.g. blind spot warning/alert, automatic emergency braking, lane departure warning)
+- Convenience / connectivity features (e.g. Apple CarPlay/Android Auto interface, car voice commands)
+- Fuel capacity
+- Passenger / Seating Capacity
+- Front Head Room (inches)
+- Front Leg Room (inches)
+- Cargo space
+
+The study null hypothesis would be: each performance metrics is statistically similar between the MechaCar prototype and all vehicle from the other manufacturers.
+
+As a judge of monetary value and competitive edge, it is recommended to use the Base MSRP as the **dependent variable**.  The analysis would consist of a one-way ANOVA  to analyze the difference between the means of the 2+ groups. 
+
+Data gathering for this analysis can be broken down into the following tasks:
+1. Compile internal data for MechaCar vehicles.
+2. Agree specific list of primary competitor vehicles for comparison.
+3. Gather competitor data, potentially from web scraping *Car and Driver* or *Kelly Blue Book*.
+4. Review, verify, and compile all data for MechaCar vehicles and competitors into a single dataframe. 
+
+
+[^1]: Holmes, Freddie.  "What do consumers want from the car of the future?". *Automotive World*.  [https://www.transportation.gov/utc/bike-sharing-popularity-grows-system-matures](https://www.automotiveworld.com/articles/what-do-consumers-want-from-the-car-of-the-future/)  Published: 19 September 2019.  Accessed: 24 August 2022.
+[^2]: Laya, Andres, Neha Vyas, and Gunnar Ehrnborg.  "2020 consumer trends in the automotive industry: Is this the end of the consumer car?" *The Ericsson Blog*. [https://www.ericsson.com/en/blog/2020/12/consumer-trends-automotive-industry-2020](https://www.ericsson.com/en/blog/2020/12/consumer-trends-automotive-industry-2020) Published: 02 December 2020.  Accessed: 24 August 2022.
+[^3]: Deloitte. "2021 Global Automotive Consumer Study".  [https://www2.deloitte.com/us/en/pages/consumer-business/articles/global-automotive-consumer-study.html](https://www2.deloitte.com/us/en/pages/consumer-business/articles/global-automotive-consumer-study.html)  Published: 22 June 2021. Accessed: 24 August 2022.
+
+
+
+
